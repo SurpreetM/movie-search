@@ -9,6 +9,7 @@ export const MovieCard: FunctionComponent<MovieCardProps> = ({
 }: MovieCardProps) => {
   const { Title, Year, Rated, Poster } = movieInfo;
 
+
   return (
     <div className="movie-card">
       <h2>{Title}</h2>
@@ -18,3 +19,5 @@ export const MovieCard: FunctionComponent<MovieCardProps> = ({
     </div>
   );
 };
+
+

@@ -1,20 +1,31 @@
 import React from "react";
+import { useState } from "react";
 import { Search } from "./Search";
 import { fetchMovieInformation } from "./fetchMovieInformation";
 import { MovieCard } from "./MovieCard";
 import "./App.css";
 
 function App() {
+  
+  //console.log()
+  const [movie, setMovie] = useState("");
   fetchMovieInformation("Rambo", console.log);
+  
+
+
   return (
+    
     <div className="App">
       <h1>Movie Search</h1>
+      
       <Search
         searchText={"Rambo"}
-        onSubmit={(searchText) => alert(searchText)}
+        // Removed the alert and fired the fetchMovieInformation instead
+        onSubmit={(searchText) => fetchMovieInformation(searchText, console.log)}
       />
+      
 
-      <MovieCard
+      <MovieCard 
         movieInfo={{
           Title: "Rambo",
           Year: "2008",

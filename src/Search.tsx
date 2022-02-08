@@ -10,11 +10,15 @@ export const Search: FunctionComponent<SearchProps> = ({
   onSubmit,
 }: SearchProps) => {
   const [search, setInput] = useState(searchText);
+  
 
   const handleSubmit = (evt: any) => {
     evt.preventDefault();
-    onSubmit(searchText);
+    // updated from searchTerm to the value searched for. 
+    onSubmit(search);
   };
+
+
 
   return (
     <form onSubmit={handleSubmit} className="search">

@@ -1,3 +1,4 @@
+import { isConstructorDeclaration } from "typescript";
 import { MovieInformation } from "./MovieInformation";
 
 export function fetchMovieInformation(
@@ -14,4 +15,5 @@ export function fetchMovieInformation(
     .catch((e) => {
       console.log(e);
     });
+
 }
